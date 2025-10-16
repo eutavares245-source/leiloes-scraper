@@ -1,0 +1,35 @@
+name: Leiloes Scraper
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # 08:00 da manhã (UTC)
+    - cron: '0 20 * * *'  # 20:00 da noite (UTC)
+  workflow_dispatch:      # permite rodar manualmente também
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run scraper
+        run: python scraper.py
+
+      - name: Commit results
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add results/
+          git commit -m "Atualização automática de resultados [skip ci]" || echo "Sem mudanças"
+          git push
