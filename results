@@ -2,8 +2,8 @@ name: Leiloes Scraper
 
 on:
   schedule:
-    - cron: '0 8 * * *'   # 08:00 da manhã (UTC)
-    - cron: '0 20 * * *'  # 20:00 da noite (UTC)
+    - cron: '0 14 * * *'   # 15:00 da tarde (UTC)
+    - cron: '0 23 * * *'  # 23:00 da noite (UTC)
   workflow_dispatch:      # permite rodar manualmente também
 
 jobs:
