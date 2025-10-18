@@ -3,7 +3,7 @@ name: Leiloes Scraper
 on:
   schedule:
     - cron: '0 15 * * *'   # 15:00 da tarde (UTC)
-    - cron: '0 23 * * *'  # 23:00 da noite (UTC)
+    - cron: '0 23 * * *'   # 23:00 da noite (UTC)
   workflow_dispatch:      # permite rodar manualmente também
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Setup Python
         uses: actions/setup-python@v4
