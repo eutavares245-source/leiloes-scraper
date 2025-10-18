@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '0 15 * * *'   # 15:00 da tarde (UTC)
     - cron: '0 23 * * *'   # 23:00 da noite (UTC)
-  workflow_dispatch:      # permite rodar manualmente também
+  workflow_dispatch:
 
 jobs:
   scrape:
