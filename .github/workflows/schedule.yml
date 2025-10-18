@@ -31,5 +31,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add results/
-          git commit -m "Atualização automática de resultados [skip ci]" || echo "Sem mudanças"
-          git push
+          git commit -m "Atualização automática de resultados [skip ci]" || echo "Sem mudanças para commitar"
+          git push || echo "Nada para enviar"
